@@ -6,6 +6,10 @@ from src.circuits import run_grover, run_deutsch_jozsa
 from src.algorithms import solve_qubo
 
 def register_routes(app):
+    @app.route('/favicon.ico')
+    def favicon():
+        return "", 204
+
     @app.route('/')
     def index():
         return render_template('index.html')
